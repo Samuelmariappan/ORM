@@ -4,26 +4,42 @@
 To develop a Django application to store and retrieve data from a database using Object Relational Mapping(ORM).
 
 ## Entity Relationship Diagram
-
-Include your ER diagram here
+![Entity Relationship Diagram](./ER.png)
 
 ## DESIGN STEPS
 
 ### STEP 1:
+Commit all the updates
 
 ### STEP 2:
+Change the URL of the GitHub remote repository
 
 ### STEP 3:
+Push the changes in the branch to the Github repository
 
-Write your own steps
 
 ## PROGRAM
+```
+admin.py
+from django.contrib import admin
+from .models import Employee,EmployeeAdmin
+admin.site.register(Employee,EmployeeAdmin)
 
-Include your code here
+models.py
+from django.db import models
+from django.contrib import admin
+class Employee (models.Model):
+    eid=models.CharField(max_length=20,help_text="Employee ID")
+    name=models.CharField(max_length=100)
+    salary=models.IntegerField()
+    age=models.IntegerField()
+    email=models.EmailField()
+class EmployeeAdmin(admin.ModelAdmin):
+    list_display=('eid','name','salary','age','email')
+```
 
 ## OUTPUT
-
-Include the screenshot of your admin page.
-
+![OUTPUT](./images/orm.png)
 
 ## RESULT
+program is executed sucessfully
